@@ -17,9 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: kollektivavtal/autoindex@v14
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          force_orphan: true
+          year: ${{ github.event.repository.name }}
